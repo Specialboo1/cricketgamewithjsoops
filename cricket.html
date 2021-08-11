@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cricket</title>
+    <link rel="stylesheet" href="style6.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container-fluid wrapper">
+  <div class = "row mt-2">
+    <div class="col-12 text-center">
+      <h1>Cricket 11</h1>
+    </div>
+    <div class = "row mt-2 border-top border-bottom">
+      <div class="col-4 text-center">
+        <h3>Team 1 Score</h3>
+        <h4 id ='team1'></h4>
+        <button type = "button" class = "btn-sm btn-primary p-1 mb-1" id="button" onclick="hit(), firsttimer()">HIT 1</button>
+      </div>
+      <div class="col-4 text-center">
+        <h3>Timer</h3>
+        <h3 id ='timer'></h3>
+      </div>
+      <div class="col-4 text-center">
+        <h3>Team 2 Score</h3>
+        <h4 id ='team2'></h4>
+        <button type = "button" class = "btn-sm btn-primary p-1 mb-1" id="button2" disabled onclick="hit(), secondtimer()">HIT 2</button>
+      </div>
+  </div>
+    <div class="row mt-2 scoreboard">
+    <div class="col-5 cover">
+      <h3 class="text-center">Team 1 Scoreboard</h3>
+    <table class="table table-bordered text-center table-responsive-sm p-0">
+        <thead>
+          <tr>
+            <th scope="col">Team</th>
+            <th scope="col">B1</th>
+            <th scope="col">B2</th>
+            <th scope="col">B3</th>
+            <th scope="col">B4</th>
+            <th scope="col">B5</th>
+            <th scope="col">B6</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr id="IndiaPlayer 1">
+            <th scope="row">Player 1</th>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td></td>
+          </tr>
+          <tr id="IndiaPlayer 2">
+            <th scope="row" >Player 2</th>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td></td>
+          </tr>
+          <tr id="IndiaPlayer 3">
+            <th scope="row" class="player">Player 3</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id="IndiaPlayer 4">
+            <th scope="row">Player 4</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id="IndiaPlayer 5">
+            <th scope="row">Player 5</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id="IndiaPlayer 6">
+            <th scope="row">Player 6</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id="IndiaPlayer 7">
+            <th scope="row">Player 7</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id="IndiaPlayer 8">
+            <th scope="row">Player 8</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id="IndiaPlayer 9">
+            <th scope="row">Player 9</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id="IndiaPlayer 10">
+            <th scope="row">Player 10</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id="IndiaPlayer 11">
+            <th scope="row">Player 11</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+     
+</div>
+<div class="col-2 text-center mt-3">
+  <button type = "button" class = "btn-sm btn-primary" id="button3" disabled onclick="result()">Generate Result</button>
+  <h3 id="result" class="mt-2 mb-2 p-2 border-bottom"></h3>
+  <h3 id="top" class="mt-2"></h3>
+</div>
+<div class="col-5 cover">
+  <h3 class="text-center">Team 2 Scoreboard</h3>
+    <table class="table table-bordered replace text-center">
+        <thead>
+          <tr>
+            <th scope="col">Team</th>
+            <th scope="col">B1</th>
+            <th scope="col">B2</th>
+            <th scope="col">B3</th>
+            <th scope="col">B4</th>
+            <th scope="col">B5</th>
+            <th scope="col">B6</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr id="SrilankaPlayer 1">
+            <th scope="row">Player 1</th>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td></td>
+          </tr>
+          <tr id="SrilankaPlayer 2">
+            <th scope="row" >Player 2</th>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+            <td></td>
+          </tr>
+          <tr id="SrilankaPlayer 3">
+            <th scope="row" class="player">Player 3</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id="SrilankaPlayer 4">
+            <th scope="row">Player 4</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id="SrilankaPlayer 5">
+            <th scope="row">Player 5</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id="SrilankaPlayer 6">
+            <th scope="row">Player 6</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id="SrilankaPlayer 7">
+            <th scope="row">Player 7</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id="SrilankaPlayer 8">
+            <th scope="row">Player 8</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id="SrilankaPlayer 9">
+            <th scope="row">Player 9</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id="SrilankaPlayer 10">
+            <th scope="row">Player 10</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id="SrilankaPlayer 11">
+            <th scope="row">Player 11</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>     
+</div>
+</div>
+</div>
+<script src="script3.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
