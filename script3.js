@@ -130,8 +130,8 @@ function result ()
     document.getElementById("team2").innerText = `${sriTeam.totalScore}`;
     if (indianTeam.totalScore > sriTeam.totalScore)
     {
-    document.getElementById("result").innerText = `India Won by ${indianTeam.totalScore -sriTeam.totalScore} Runs`;
-    alert("India Won");
+    document.getElementById("result").innerText = `Team 1 Won by ${indianTeam.totalScore -sriTeam.totalScore} Runs`;
+    alert("Team 1 Won");
     let newvalue = 0;
     let topplayer;
     indianTeam.players.forEach(ele => {
@@ -145,8 +145,8 @@ function result ()
     }
     else
     {
-    document.getElementById("result").innerText = `Srilanka Won by ${sriTeam.totalScore - indianTeam.totalScore} Runs`;
-    alert("Srilanka Won");
+    document.getElementById("result").innerText = `Team 2 Won by ${sriTeam.totalScore - indianTeam.totalScore} Runs`;
+    alert("Team 2 Won");
     let newvalue = 0;
     let topplayer;
     sriTeam.players.forEach(ele => {
